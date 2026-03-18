@@ -1,0 +1,29 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub/
+build/
+
+# Flutter generated
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Coverage
+coverage/
+
+# Analyze reports
+dart_analyze_before.txt
+dart_analyze_after.txt
+flutter_analyze_before.txt
+flutter_analyze_after.txt
+*_analyze_before.txt
+*_analyze_after.txt
+
+# OS files
+.DS_Store
+Thumbs.db
