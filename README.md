@@ -369,3 +369,21 @@ This project is intended for academic / educational use.
 
 ```bash
 dart doc
+
+## Запуск проєкту для розробника
+
+### Необхідне програмне забезпечення
+Перед початком роботи потрібно встановити:
+- Git
+- Flutter SDK
+- Dart SDK
+- Android Studio або Visual Studio Code
+- Android SDK
+- емулятор Android або фізичний Android-пристрій
+- для запуску на Windows — Visual Studio з компонентами Desktop development with C++
+
+### Клонування репозиторію
+Склонуйте репозиторій командою:
+
+```bash
+git clone https://github.com/tekamolo123/diploma_work_travel_app.git
