@@ -56,8 +56,10 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16),
         children: [
           if (user != null) ...[
-            Text('Вітаємо, ${user.nickname} 👋',
-                style: Theme.of(context).textTheme.titleLarge),
+            Text(
+              'Вітаємо, ${user.nickname} 👋',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
             const SizedBox(height: 12),
           ],
           TextField(
@@ -74,8 +76,9 @@ class _HomePageState extends State<HomePage> {
             (tour) => Card(
               child: ListTile(
                 title: Text(tour.title),
-                subtitle:
-                    Text('${tour.country}, ${tour.city} • ${tour.days} днів'),
+                subtitle: Text(
+                  '${tour.country}, ${tour.city} • ${tour.days} днів',
+                ),
                 trailing: Text('\$${tour.price.toStringAsFixed(0)}'),
                 onTap: () => Navigator.pushNamed(
                   context,

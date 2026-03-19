@@ -24,16 +24,18 @@ class AuthService {
   }
 
   static String _genSalt([int length = 16]) {
-  final rnd = Random.secure();
-  final bytes = List<int>.generate(length, (_) => rnd.nextInt(256));
-  return base64UrlEncode(bytes);
-}
+    final rnd = Random.secure();
+    final bytes = List<int>.generate(length, (_) => rnd.nextInt(256));
+    return base64UrlEncode(bytes);
+  }
 
-static String _hashPassword({required String password, required String salt}) {
-  final bytes = utf8.encode('$salt:$password');
-  return sha256.convert(bytes).toString();
-}
-
+  static String _hashPassword({
+    required String password,
+    required String salt,
+  }) {
+    final bytes = utf8.encode('$salt:$password');
+    return sha256.convert(bytes).toString();
+  }
 
   static Future<AuthUser> register({
     required String nickname,
@@ -48,14 +50,13 @@ static String _hashPassword({required String password, required String salt}) {
     }
 
     final salt = _genSalt();
-final passwordHash = _hashPassword(password: password, salt: salt);
+    final passwordHash = _hashPassword(password: password, salt: salt);
 
     _usersByEmail[key] = {
-  'nickname': nickname.trim(),
-  'salt': salt,
-  'passwordHash': passwordHash,
-};
-
+      'nickname': nickname.trim(),
+      'salt': salt,
+      'passwordHash': passwordHash,
+    };
 
     return AuthUser(nickname: nickname.trim(), email: key);
   }
@@ -75,13 +76,12 @@ final passwordHash = _hashPassword(password: password, salt: salt);
       throw Exception(msg);
     }
     final salt = data['salt']!;
-final storedHash = data['passwordHash']!;
-final calcHash = _hashPassword(password: password, salt: salt);
+    final storedHash = data['passwordHash']!;
+    final calcHash = _hashPassword(password: password, salt: salt);
 
-if (storedHash != calcHash) {
-  throw Exception('Невірний email або пароль');
-}
-
+    if (storedHash != calcHash) {
+      throw Exception('Невірний email або пароль');
+    }
 
     _currentUser = AuthUser(nickname: data['nickname']!, email: key);
     return _currentUser!;

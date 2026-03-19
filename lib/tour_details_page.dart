@@ -16,8 +16,10 @@ class TourDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${tour.country}, ${tour.city}',
-                style: Theme.of(context).textTheme.titleLarge),
+            Text(
+              '${tour.country}, ${tour.city}',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
             const SizedBox(height: 8),
             Text('Кількість днів: ${tour.days}'),
             Text('Ціна: \$${tour.price.toStringAsFixed(0)}'),

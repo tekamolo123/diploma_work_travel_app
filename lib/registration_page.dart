@@ -35,7 +35,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Акаунт успішно створено! Тепер увійдіть.')),
+        const SnackBar(
+          content: Text('Акаунт успішно створено! Тепер увійдіть.'),
+        ),
       );
       Navigator.pop(context);
     } catch (e) {

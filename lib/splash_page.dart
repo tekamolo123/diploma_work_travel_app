@@ -28,10 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text(
-          'Завантаження...',
-          style: TextStyle(fontSize: 24),
-        ),
+        child: Text('Завантаження...', style: TextStyle(fontSize: 24)),
       ),
     );
   }
