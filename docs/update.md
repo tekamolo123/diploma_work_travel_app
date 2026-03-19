@@ -1,31 +1,31 @@
-# Оновлення проєкту
+# Project Update
 
-## Призначення
-Цей документ описує порядок оновлення Flutter-проєкту `diploma_work_travel_app` після внесення змін у код або під час переходу на нову версію застосунку.
+## Purpose
+This document describes the procedure for updating the Flutter project `diploma_work_travel_app` after code changes or when moving to a new version of the application.
 
-## Підготовка до оновлення
-Перед оновленням потрібно:
-1. Переконатися, що поточна робоча версія проєкту стабільна.
-2. Зберегти резервну копію репозиторію або попереднього релізу.
-3. Перевірити сумісність версії Flutter SDK та залежностей.
-4. За потреби зафіксувати поточний commit або створити тег.
-5. Підготувати середовище збірки або тестування.
+## Preparation for Update
+Before updating, you need to:
+1. Make sure that the current working version of the project is stable.
+2. Save a backup copy of the repository or the previous release.
+3. Check the compatibility of the Flutter SDK version and dependencies.
+4. If necessary, save the current commit or create a tag.
+5. Prepare the build or testing environment.
 
-## Створення резервної копії
-Перед оновленням рекомендується:
-- зберегти попередню release-збірку;
-- створити резервну копію документації;
-- зберегти поточний стан репозиторію через git commit або git tag;
-- за потреби експортувати локальні артефакти збірки.
+## Creating a Backup
+Before updating, it is recommended to:
+- save the previous release build;
+- create a backup copy of the documentation;
+- save the current state of the repository using `git commit` or `git tag`;
+- if necessary, export local build artifacts.
 
-## Перевірка сумісності
-Перед оновленням перевірити:
-- актуальність Flutter SDK;
-- сумісність пакунків у `pubspec.yaml`;
-- відсутність критичних змін у структурі проєкту;
-- коректність конфігурації платформених залежностей.
+## Compatibility Check
+Before updating, check:
+- the current state of the Flutter SDK;
+- package compatibility in `pubspec.yaml`;
+- the absence of critical changes in the project structure;
+- the correctness of platform dependency configuration.
 
-Команди для перевірки:
+Commands for checking:
 ```bash
 flutter doctor
 flutter pub get

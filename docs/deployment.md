@@ -1,40 +1,40 @@
-# Розгортання проєкту
+# Project Deployment
 
-## Призначення
-Цей документ описує порядок розгортання Flutter-проєкту `diploma_work_travel_app` у production або демонстраційному середовищі.
+## Purpose
+This document describes the deployment procedure for the Flutter project `diploma_work_travel_app` in a production or demonstration environment.
 
-## Тип проєкту
-Проєкт є клієнтським Flutter-застосунком.  
-Окремий веб-сервер, application server, сервер бази даних, кешуючий сервер і файлове сховище не використовуються.
+## Project Type
+The project is a client-side Flutter application.  
+A separate web server, application server, database server, caching server, and file storage are not used.
 
-## Архітектура проєкту
-Основні компоненти проєкту:
+## Project Architecture
+Main project components:
 - Flutter client application
-- локальна логіка автентифікації
-- локальні mock-дані для турів
-- Android emulator / Android device / Windows desktop target для запуску
+- local authentication logic
+- local mock data for tours
+- Android emulator / Android device / Windows desktop target for running
 
-## Вимоги до апаратного забезпечення
-Мінімальні вимоги для машини збірки або розгортання:
-- CPU: 2 ядра
+## Hardware Requirements
+Minimum requirements for the build or deployment machine:
+- CPU: 2 cores
 - RAM: 8 GB
-- Вільне місце на диску: від 10 GB
-- Стабільне підключення до інтернету для завантаження залежностей
+- Free disk space: from 10 GB
+- Stable internet connection for downloading dependencies
 
-## Необхідне програмне забезпечення
-Для розгортання або збірки потрібно встановити:
+## Required Software
+For deployment or build, the following must be installed:
 - Git
 - Flutter SDK
 - Dart SDK
 - Android SDK
-- Android Studio або Visual Studio Code
-- для Windows desktop build — Visual Studio з компонентом Desktop development with C++
+- Android Studio or Visual Studio Code
+- for Windows desktop build — Visual Studio with the Desktop development with C++ component
 
-## Налаштування мережі
-Для локального або демонстраційного розгортання спеціальна мережева конфігурація не потрібна.  
-Проєкт не використовує зовнішній backend, окремі API-сервіси або сервер бази даних.
+## Network Configuration
+For local or demonstration deployment, no special network configuration is required.  
+The project does not use an external backend, separate API services, or a database server.
 
-## Конфігурація середовища
-1. Клонувати репозиторій:
+## Environment Configuration
+1. Clone the repository:
 ```bash
 git clone https://github.com/tekamolo123/diploma_work_travel_app.git

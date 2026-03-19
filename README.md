@@ -355,35 +355,35 @@ All new public classes, methods, and functions in this project should be documen
 
 This project is intended for academic / educational use.
 
-## Документування коду
+## Code Documentation
 
-У проєкті використовується документування коду за допомогою `///` Dart doc comments.
+The project uses code documentation with Dart doc comments written as `///`.
 
-### Основні правила
-- документувати публічні класи, методи та важливі частини логіки;
-- підтримувати документацію актуальною після змін у коді;
-- використовувати короткі та зрозумілі описи призначення класів і методів.
+### Main Rules
+- document public classes, methods, and important parts of the logic;
+- keep the documentation up to date after code changes;
+- use short and clear descriptions of the purpose of classes and methods.
 
-### Генерація документації
-Для генерації документації використовується команда:
+### Documentation Generation
+The following command is used to generate documentation:
 
 ```bash
 dart doc
 
-## Запуск проєкту для розробника
+## Running the Project for a Developer
 
-### Необхідне програмне забезпечення
-Перед початком роботи потрібно встановити:
+### Required Software
+Before getting started, you need to install:
 - Git
 - Flutter SDK
 - Dart SDK
-- Android Studio або Visual Studio Code
+- Android Studio or Visual Studio Code
 - Android SDK
-- емулятор Android або фізичний Android-пристрій
-- для запуску на Windows — Visual Studio з компонентами Desktop development with C++
+- an Android emulator or a physical Android device
+- for running on Windows — Visual Studio with the Desktop development with C++ component
 
-### Клонування репозиторію
-Склонуйте репозиторій командою:
+### Cloning the Repository
+Clone the repository with the following command:
 
 ```bash
 git clone https://github.com/tekamolo123/diploma_work_travel_app.git

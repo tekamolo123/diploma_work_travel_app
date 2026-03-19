@@ -1,25 +1,26 @@
-# Архітектура проєкту
+# Project Architecture
 
-Проєкт побудований як Flutter-застосунок із розділенням на екрани, маршрути, модель даних і сервіс автентифікації.
+The project is built as a Flutter application with separation into screens, routes, data models, and an authentication service.
 
-## Основні компоненти
-- `main.dart` — точка входу в застосунок;
-- `app.dart` — конфігурація MaterialApp, теми та маршрутизації;
-- `routes.dart` — іменовані маршрути застосунку;
-- `auth_service.dart` — логіка локальної автентифікації користувача;
-- `tour.dart` — модель туристичного туру;
-- `mock_tours.dart` — демонстраційні дані для списку турів;
-- `home_page.dart` — головна сторінка зі списком турів і пошуком;
-- `login_page.dart` — сторінка входу користувача;
-- `registration_page.dart` — сторінка реєстрації користувача;
-- `tour_details_page.dart` — сторінка з детальною інформацією про тур;
-- `splash_page.dart` — стартова сторінка з перевіркою стану входу.
+## Main Components
+- `main.dart` — the application entry point;
+- `app.dart` — configuration of `MaterialApp`, themes, and routing;
+- `routes.dart` — named application routes;
+- `auth_service.dart` — local user authentication logic;
+- `tour.dart` — the tour data model;
+- `mock_tours.dart` — demo data for the tour list;
+- `home_page.dart` — the main page with the list of tours and search;
+- `login_page.dart` — the user login page;
+- `registration_page.dart` — the user registration page;
+- `tour_details_page.dart` — the page with detailed tour information;
+- `splash_page.dart` — the startup page with login state checking.
 
-## Взаємодія компонентів
-Після запуску застосунку через `main.dart` ініціалізується `MyApp`, який налаштовує маршрути й стартову сторінку.  
-`SplashPage` визначає, чи авторизований користувач, і перенаправляє його на `HomePage` або `LoginPage`.  
-`LoginPage` і `RegisterPage` взаємодіють із `AuthService`.  
-`HomePage` використовує `mockTours` для відображення списку турів і відкриває `TourDetailsPage` для вибраного об’єкта `Tour`.
+## Component Interaction
+After the application starts through `main.dart`, `MyApp` is initialized, which sets up the routes and the initial page.  
+`SplashPage` determines whether the user is authenticated and redirects them to `HomePage` or `LoginPage`.  
+`LoginPage` and `RegisterPage` interact with `AuthService`.  
+`HomePage` uses `mockTours` to display the list of tours and opens `TourDetailsPage` for the selected `Tour` object.
 
-## Підхід до побудови
-Архітектура проєкту є простою й придатною для навчального застосунку. Бізнес-логіка винесена в окремий сервіс, структура маршрутів централізована, а модель даних і мокові дані відокремлені від UI.
+## Design Approach
+The project architecture is simple and suitable for an educational application.  
+Business logic is extracted into a separate service, the route structure is centralized, and the data model and mock data are separated from the UI.

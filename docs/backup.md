@@ -1,37 +1,37 @@
-# Резервне копіювання
+# Backup
 
-## Призначення
-Цей документ описує підхід до резервного копіювання Flutter-проєкту `diploma_work_travel_app`, його документації та артефактів збірки.
+## Purpose
+This document describes the backup approach for the Flutter project `diploma_work_travel_app`, its documentation, and build artifacts.
 
-## Що необхідно резервувати
-Для цього проєкту рекомендується регулярно зберігати:
-- вихідний код проєкту;
-- файл `pubspec.yaml`;
-- теку `docs` з усією технічною документацією;
-- згенеровану документацію;
-- release-збірки застосунку;
-- важливі теги та коміти Git-репозиторію.
+## What Should Be Backed Up
+For this project, it is recommended to regularly save:
+- the project source code;
+- the `pubspec.yaml` file;
+- the `docs` folder with all technical documentation;
+- generated documentation;
+- release builds of the application;
+- important tags and commits of the Git repository.
 
-## Основний спосіб резервного копіювання
-Основним механізмом збереження вихідного коду є Git-репозиторій з віддаленим сховищем на GitHub.  
-Усі важливі зміни мають фіксуватися комітами та відправлятися у віддалений репозиторій.
+## Main Backup Method
+The main mechanism for saving the source code is a Git repository with remote storage on GitHub.  
+All important changes should be committed and pushed to the remote repository.
 
-## Додаткове резервне копіювання
-Додатково рекомендується:
-- зберігати архіви release-збірок;
-- створювати окремі архіви згенерованої документації;
-- за потреби дублювати копії проєкту на зовнішньому носії або в хмарному сховищі.
+## Additional Backup
+Additionally, it is recommended to:
+- store archives of release builds;
+- create separate archives of generated documentation;
+- if necessary, duplicate project copies on external storage or in cloud storage.
 
-## Рекомендована періодичність
-Резервне копіювання доцільно виконувати:
-- після кожного завершеного етапу розробки;
-- перед оновленням проєкту;
-- перед релізною збіркою;
-- перед внесенням великих структурних змін;
-- після оновлення документації.
+## Recommended Frequency
+It is advisable to perform backups:
+- after each completed development stage;
+- before updating the project;
+- before a release build;
+- before making major structural changes;
+- after updating the documentation.
 
-## Приклад резервного сценарію
-1. Виконати `git add .`
-2. Створити коміт:
+## Example Backup Scenario
+1. Run `git add .`
+2. Create a commit:
 ```bash
 git commit -m "Backup before update"

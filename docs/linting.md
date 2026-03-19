@@ -1,13 +1,13 @@
-# Linting у проєкті diploma_work_travel_app
+# Linting in the diploma_work_travel_app Project
 
-## Обраний інструмент
-Для статичного аналізу коду в проєкті використовується Dart Analyzer разом із набором правил `flutter_lints`.
+## Selected Tool
+Dart Analyzer is used for static code analysis in the project together with the `flutter_lints` rule set.
 
-## Причини вибору
-Було обрано `flutter_lints`, оскільки цей пакет містить рекомендовані правила для Flutter-проєктів, легко інтегрується та дозволяє підтримувати єдиний стиль коду.
+## Reasons for Choosing It
+`flutter_lints` was chosen because this package contains recommended rules for Flutter projects, is easy to integrate, and helps maintain a consistent code style.
 
-## Конфігурація
-У проєкті використовується файл `analysis_options.yaml` з таким підключенням:
+## Configuration
+The project uses the `analysis_options.yaml` file with the following inclusion:
 
 ```yaml
 include: package:flutter_lints/flutter.yaml

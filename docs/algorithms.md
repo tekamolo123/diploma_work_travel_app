@@ -1,53 +1,53 @@
-# Опис алгоритмів
+# Algorithm Descriptions
 
-## Генерація солі
+## Salt Generation
 
-У сервісі автентифікації для кожного нового користувача генерується випадкова сіль.  
-Сіль створюється за допомогою криптографічно стійкого генератора випадкових чисел `Random.secure()`.  
-Після цього формується набір випадкових байтів заданої довжини, який кодується у формат Base64 URL-safe.
+In the authentication service, a random salt is generated for each new user.  
+The salt is created using the cryptographically secure random number generator `Random.secure()`.  
+After that, a sequence of random bytes of the specified length is generated and encoded in URL-safe Base64 format.
 
-Такий підхід дозволяє:
-- уникнути однакових хешів для однакових паролів;
-- підвищити стійкість до атак за готовими таблицями хешів;
-- забезпечити унікальність обробки кожного пароля.
+This approach makes it possible to:
+- avoid identical hashes for identical passwords;
+- increase resistance to precomputed hash table attacks;
+- ensure unique processing of each password.
 
-## Хешування пароля
+## Password Hashing
 
-Після генерації солі пароль не зберігається у відкритому вигляді.  
-Для збереження використовується хешування за допомогою алгоритму SHA-256.
+After the salt is generated, the password is not stored in plain text.  
+SHA-256 is used for hashing.
 
-Перед обчисленням хешу сіль і пароль об’єднуються у рядок формату:
+Before calculating the hash, the salt and password are combined into a string in the following format:
 
 `salt:password`
 
-Після цього рядок перетворюється в байти UTF-8 і передається в алгоритм SHA-256.  
-Отримане значення зберігається як рядок і використовується під час наступних перевірок входу користувача.
+After that, the string is converted to UTF-8 bytes and passed to the SHA-256 algorithm.  
+The resulting value is stored as a string and used during subsequent user login checks.
 
-## Перевірка пароля під час входу
+## Password Verification During Login
 
-Під час входу користувача застосунок:
-1. знаходить запис користувача за email;
-2. отримує збережену сіль;
-3. повторно обчислює хеш для введеного пароля;
-4. порівнює новий хеш зі збереженим.
+When a user logs in, the application:
+1. finds the user record by email;
+2. retrieves the stored salt;
+3. recalculates the hash for the entered password;
+4. compares the new hash with the stored one.
 
-Якщо значення збігаються, користувач вважається автентифікованим.
+If the values match, the user is considered authenticated.
 
-## Фільтрація турів
+## Tour Filtering
 
-На головній сторінці застосунку реалізовано пошук турів за текстовим запитом.  
-Пошук працює за трьома полями:
-- назва туру;
-- країна;
-- місто.
+On the main page of the application, tour search by text query is implemented.  
+The search works across three fields:
+- tour title;
+- country;
+- city.
 
-Алгоритм фільтрації виконує такі дії:
-1. зчитує текст із поля пошуку;
-2. прибирає зайві пробіли;
-3. переводить рядок до нижнього регістру;
-4. для кожного туру об’єднує назву, країну та місто в один рядок;
-5. також переводить його до нижнього регістру;
-6. перевіряє, чи містить цей рядок пошуковий запит.
+The filtering algorithm performs the following actions:
+1. reads the text from the search field;
+2. removes extra spaces;
+3. converts the string to lowercase;
+4. for each tour, combines the title, country, and city into one string;
+5. also converts it to lowercase;
+6. checks whether this string contains the search query.
 
-Якщо запит порожній, повертається повний список турів.  
-Якщо ні — відображаються лише ті тури, які відповідають умовам пошуку.
+If the query is empty, the full list of tours is returned.  
+Otherwise, only the tours that match the search conditions are displayed.
