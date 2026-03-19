@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'routes.dart';
 import 'auth_service.dart';
 
+/// Сторінка входу користувача до застосунку.
 class LoginPage extends StatefulWidget {
+  /// Створює сторінку входу.
   const LoginPage({super.key});
 
   @override
@@ -22,6 +24,10 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
+  /// Виконує спробу входу користувача після валідації форми.
+  ///
+  /// У разі успіху відкриває головну сторінку, а в разі помилки
+  /// показує повідомлення через SnackBar.
   Future<void> _login() async {
     if (!_formKey.currentState!.validate()) return;
 

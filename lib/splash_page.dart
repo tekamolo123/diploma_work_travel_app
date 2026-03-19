@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'routes.dart';
 import 'auth_service.dart';
 
+/// Стартова сторінка застосунку, яка визначає подальший маршрут користувача.
 class SplashPage extends StatefulWidget {
+  /// Створює стартову сторінку.
   const SplashPage({super.key});
 
   @override

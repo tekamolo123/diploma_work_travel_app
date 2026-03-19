@@ -3,32 +3,44 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:crypto/crypto.dart';
 
+/// Модель авторизованого користувача.
 class AuthUser {
+  /// Нікнейм користувача.
   final String nickname;
+
+  /// Email користувача.
   final String email;
 
+  /// Створює об'єкт авторизованого користувача.
   const AuthUser({required this.nickname, required this.email});
 }
 
+/// Сервіс для локальної автентифікації користувача.
 class AuthService {
   AuthService._();
 
   static final Map<String, Map<String, String>> _usersByEmail = HashMap();
   static AuthUser? _currentUser;
 
+  /// Повертає поточного авторизованого користувача.
   static AuthUser? get currentUser => _currentUser;
+
+  /// Показує, чи є користувач авторизованим.
   static bool get isLoggedIn => _currentUser != null;
 
+  /// Завершує поточну сесію користувача.
   static void logout() {
     _currentUser = null;
   }
 
+  /// Генерує випадкову сіль для хешування пароля.
   static String _genSalt([int length = 16]) {
     final rnd = Random.secure();
     final bytes = List<int>.generate(length, (_) => rnd.nextInt(256));
     return base64UrlEncode(bytes);
   }
 
+  /// Повертає SHA-256 хеш пароля з використанням солі.
   static String _hashPassword({
     required String password,
     required String salt,
@@ -37,6 +49,7 @@ class AuthService {
     return sha256.convert(bytes).toString();
   }
 
+  /// Реєструє нового користувача за нікнеймом, email і паролем.
   static Future<AuthUser> register({
     required String nickname,
     required String email,
@@ -61,6 +74,7 @@ class AuthService {
     return AuthUser(nickname: nickname.trim(), email: key);
   }
 
+  /// Виконує вхід користувача за email і паролем.
   static Future<AuthUser> login({
     required String email,
     required String password,
@@ -75,6 +89,7 @@ class AuthService {
     if (data == null) {
       throw Exception(msg);
     }
+
     final salt = data['salt']!;
     final storedHash = data['passwordHash']!;
     final calcHash = _hashPassword(password: password, salt: salt);

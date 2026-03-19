@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'routes.dart';
-import 'splash_page.dart';
+import 'home_page.dart';
 import 'login_page.dart';
 import 'registration_page.dart';
-import 'home_page.dart';
-import 'tour_details_page.dart';
+import 'routes.dart';
+import 'splash_page.dart';
 import 'tour.dart';
+import 'tour_details_page.dart';
 
-//try for analyze
-
+/// Головний віджет застосунку.
+///
+/// Налаштовує тему, стартовий маршрут і таблицю навігації.
 class MyApp extends StatelessWidget {
+  /// Створює головний віджет застосунку.
   const MyApp({super.key});
 
   @override
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
         AppRoutes.register: (_) => const RegisterPage(),
         AppRoutes.home: (_) => const HomePage(),
       },
+
+      /// Генерує маршрути, які потребують передачі аргументів.
       onGenerateRoute: (settings) {
         if (settings.name == AppRoutes.tourDetails) {
           final args = settings.arguments;

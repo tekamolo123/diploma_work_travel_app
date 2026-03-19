@@ -5,7 +5,9 @@ import 'auth_service.dart';
 import 'mock_tours.dart';
 import 'tour.dart';
 
+/// Головна сторінка застосунку зі списком доступних турів.
 class HomePage extends StatefulWidget {
+  /// Створює головну сторінку зі списком турів.
   const HomePage({super.key});
 
   @override
@@ -21,6 +23,9 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+  /// Повертає список турів, відфільтрований за пошуковим запитом.
+  ///
+  /// Пошук виконується за назвою туру, країною та містом.
   List<Tour> get _filtered {
     final q = _searchC.text.trim().toLowerCase();
     if (q.isEmpty) return mockTours;

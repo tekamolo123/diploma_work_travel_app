@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="diploma_work_travel_app API docs, for the Dart programming language.">
+  <title>diploma_work_travel_app - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">diploma_work_travel_app package</li>
+  </ol>
+  <div class="self-name">diploma_work_travel_app</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="-travel-app-flutter">✈️ Travel App (Flutter)</h1>
+<p>A Flutter mobile application for user authentication, tour browsing, tour search, and viewing detailed travel offers.</p>
+<blockquote>
+<p>Academic project focused on a simple client-side architecture.<br>
+All core operations are performed locally inside the application without a backend server or external database.</p>
+</blockquote>
+<hr>
+<h2 id="-overview">📌 Overview</h2>
+<p><strong>Travel App</strong> is a mobile application built with <strong>Flutter</strong> for browsing туристические туры, searching destinations, and viewing detailed trip information.</p>
+<p>The project demonstrates:</p>
+<ul>
+<li>user registration and login;</li>
+<li>local authentication flow;</li>
+<li>splash-based startup navigation;</li>
+<li>tour catalog and search;</li>
+<li>detailed tour pages;</li>
+<li>basic automated testing.</li>
+</ul>
+<hr>
+<h2 id="-project-purpose">🎯 Project Purpose</h2>
+<p>The application is designed for:</p>
+<ul>
+<li>user registration and authentication;</li>
+<li>viewing a list of travel tours;</li>
+<li>searching tours by title, country, or city;</li>
+<li>viewing detailed information about a selected tour;</li>
+<li>demonstrating a simple Flutter navigation flow and local business logic.</li>
+</ul>
+<hr>
+<h2 id="-main-features">🚀 Main Features</h2>
+<h3 id="-authentication">🔐 Authentication</h3>
+<ul>
+<li>register with <strong>nickname + email + password</strong>;</li>
+<li>login using <strong>email + password</strong>;</li>
+<li>password hashing using <strong>SHA-256 with random salt</strong>;</li>
+<li>local session state through the current authenticated user.</li>
+</ul>
+<h3 id="-splash-flow">📱 Splash Flow</h3>
+<ul>
+<li>display a splash screen during startup;</li>
+<li>automatically redirect the user depending on the authentication state.</li>
+</ul>
+<h3 id="-tour-catalog">🗺️ Tour Catalog</h3>
+<ul>
+<li>display a list of available tours;</li>
+<li>show tour title, country, city, duration, and price;</li>
+<li>open a separate details page for a selected tour.</li>
+</ul>
+<h3 id="-search">🔎 Search</h3>
+<ul>
+<li>search tours by title;</li>
+<li>search tours by country or city;</li>
+<li>case-insensitive filtering;</li>
+<li>show a fallback message when no tours are found.</li>
+</ul>
+<h3 id="-tour-details">📄 Tour Details</h3>
+<ul>
+<li>display full information about a selected tour;</li>
+<li>show trip destination, duration, price, and description;</li>
+<li>provide a placeholder booking button for future functionality.</li>
+</ul>
+<h3 id="-testing">✅ Testing</h3>
+<ul>
+<li>tests for authentication logic;</li>
+<li>tests for search and filtering on the home page;</li>
+<li>base widget test file for Flutter test setup.</li>
+</ul>
+<hr>
+<h2 id="-architecture">🏗️ Architecture</h2>
+<p>This project is a <strong>mobile client-side application</strong>, not a web-based client-server system.<br>
+Its architecture is intentionally lightweight and focused on:</p>
+<ul>
+<li>local UI logic;</li>
+<li>local authentication state;</li>
+<li>static tour data.</li>
+</ul>
+<h3 id="included">Included</h3>
+<ul>
+<li>Flutter UI;</li>
+<li>page routing and navigation;</li>
+<li>service layer for authentication;</li>
+<li>local in-memory storage for registered users;</li>
+<li>static mock data for tours;</li>
+<li>automated tests for core functionality;</li>
+<li>platform folders for Android, iOS, Linux, macOS, Windows, and Web.</li>
+</ul>
+<h3 id="not-included">Not Included</h3>
+<ul>
+<li>web server;</li>
+<li>application server;</li>
+<li>backend API;</li>
+<li>external database;</li>
+<li>cloud authentication provider;</li>
+<li>persistent local database;</li>
+<li>online booking system.</li>
+</ul>
+<hr>
+<h3 id="dependency-flow">Dependency Flow</h3>
+<pre class="language-text"><code class="language-text">UI (pages/widgets)
+    -&gt; Routes
+        -&gt; AuthService / mockTours
+            -&gt; in-memory state
+</code></pre>
+<hr>
+<h2 id="-tech-stack">🛠 Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flutter / Dart</td>
+<td>Main application development</td>
+</tr>
+<tr>
+<td>Material Design</td>
+<td>UI components and styling</td>
+</tr>
+<tr>
+<td>crypto</td>
+<td>SHA-256 password hashing</td>
+</tr>
+<tr>
+<td>Flutter test</td>
+<td>Automated testing</td>
+</tr>
+<tr>
+<td>Android / iOS / Web / Desktop</td>
+<td>Platform support</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-project-structure">📂 Project Structure</h2>
+<h3 id="root-structure">Root Structure</h3>
+<pre class="language-text"><code class="language-text">android/                   Android-specific project files
+ios/                       iOS-specific project files
+lib/                       Main application source code
+linux/                     Linux desktop support files
+macos/                     macOS desktop support files
+test/                      Automated tests
+web/                       Web support files
+windows/                   Windows desktop support files
+README.md                  Developer documentation
+pubspec.yaml               Flutter dependencies
+pubspec.lock               Locked package versions
+analysis_options.yaml      Analyzer rules
+LICENSE                    License information
+.gitignore                 Git ignore rules
+</code></pre>
+<h3 id="structure-of-lib">Structure of <code>lib/</code></h3>
+<pre class="language-text"><code class="language-text">lib/
+  main.dart
+  app.dart
+  auth_service.dart
+  home_page.dart
+  login_page.dart
+  mock_tours.dart
+  registration_page.dart
+  routes.dart
+  splash_page.dart
+  tour.dart
+  tour_details_page.dart
+</code></pre>
+<h3 id="structure-of-test">Structure of <code>test/</code></h3>
+<pre class="language-text"><code class="language-text">test/
+  auth_service_test.dart
+  home_page_filter_test.dart
+  widget_test.dart
+</code></pre>
+<hr>
+<h2 id="-main-parts-description">🧩 Main Parts Description</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.dart</code></td>
+<td>Application entry point</td>
+</tr>
+<tr>
+<td><code>app.dart</code></td>
+<td>Root Flutter app, route registration, and route generation</td>
+</tr>
+<tr>
+<td><code>auth_service.dart</code></td>
+<td>Local authentication service with in-memory users, random salt generation, and SHA-256 password hashing</td>
+</tr>
+<tr>
+<td><code>routes.dart</code></td>
+<td>Centralized route names</td>
+</tr>
+<tr>
+<td><code>splash_page.dart</code></td>
+<td>Startup screen with redirect logic based on login state</td>
+</tr>
+<tr>
+<td><code>login_page.dart</code></td>
+<td>User login form and login flow</td>
+</tr>
+<tr>
+<td><code>registration_page.dart</code></td>
+<td>User registration form and account creation flow</td>
+</tr>
+<tr>
+<td><code>home_page.dart</code></td>
+<td>Main page with greeting, search field, and tour list</td>
+</tr>
+<tr>
+<td><code>mock_tours.dart</code></td>
+<td>Static list of predefined tours</td>
+</tr>
+<tr>
+<td><code>tour.dart</code></td>
+<td>Tour data model</td>
+</tr>
+<tr>
+<td><code>tour_details_page.dart</code></td>
+<td>Detailed information page for a selected tour</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-tour-data-model">🧳 Tour Data Model</h2>
+<p>The project currently uses a local <code>Tour</code> model with the following fields:</p>
+<pre class="language-text"><code class="language-text">Tour(
+  id,
+  title,
+  country,
+  city,
+  days,
+  price,
+  description
+)
+</code></pre>
+<h3 id="example-tours">Example Tours</h3>
+<ul>
+<li>Морський відпочинок All Inclusive</li>
+<li>Європейський вікенд</li>
+<li>Гірський релакс</li>
+</ul>
+<hr>
+<h2 id="-setup-guide">⚙️ Setup Guide</h2>
+<h3 id="1-install-required-software">1. Install Required Software</h3>
+<p>Make sure you have installed:</p>
+<ul>
+<li>Git</li>
+<li>Flutter SDK</li>
+<li>Android Studio</li>
+<li>Android SDK</li>
+<li>Android emulator or physical Android device</li>
+<li>JDK</li>
+<li>Optional: VS Code or Android Studio as IDE</li>
+</ul>
+<h3 id="2-configure-flutter-environment">2. Configure Flutter Environment</h3>
+<p>Run:</p>
+<pre class="language-bash"><code class="language-bash">flutter doctor
+</code></pre>
+<p>If Android licenses are not accepted yet:</p>
+<pre class="language-bash"><code class="language-bash">flutter doctor --android-licenses
+</code></pre>
+<h3 id="3-clone-the-repository">3. Clone the Repository</h3>
+<pre class="language-bash"><code class="language-bash">git clone &lt;your_repository_url&gt;
+cd &lt;your_project_folder&gt;
+</code></pre>
+<h3 id="4-install-dependencies">4. Install Dependencies</h3>
+<pre class="language-bash"><code class="language-bash">flutter pub get
+</code></pre>
+<h3 id="5-check-available-devices">5. Check Available Devices</h3>
+<pre class="language-bash"><code class="language-bash">flutter devices
+</code></pre>
+<h3 id="6-run-the-project">6. Run the Project</h3>
+<pre class="language-bash"><code class="language-bash">flutter run
+</code></pre>
+<hr>
+<h2 id="-basic-commands">💻 Basic Commands</h2>
+<pre class="language-bash"><code class="language-bash">flutter pub get
+flutter run
+flutter devices
+flutter analyze
+flutter test
+flutter clean
+</code></pre>
+<p>After <code>flutter clean</code>, run again:</p>
+<pre class="language-bash"><code class="language-bash">flutter pub get
+</code></pre>
+<hr>
+<h2 id="-typical-workflow">🔄 Typical Workflow</h2>
+<pre class="language-bash"><code class="language-bash">git pull
+flutter pub get
+flutter analyze
+flutter run
+flutter test
+</code></pre>
+<hr>
+<h2 id="-known-limitations">⚠️ Known Limitations</h2>
+<ul>
+<li>Tour data is currently stored as mock data in source code.</li>
+<li>User accounts are stored only in memory and are not persisted after application restart.</li>
+<li>Session persistence is not implemented.</li>
+<li>Booking functionality is currently a placeholder.</li>
+<li>The project does not include a backend server.</li>
+<li>The UI is intentionally minimal for academic / MVP purposes.</li>
+</ul>
+<hr>
+<h2 id="-roadmap">🛣 Roadmap</h2>
+<ul>
+<li>save current user session locally;</li>
+<li>add persistent storage for users;</li>
+<li>move tour data from mock list to local database or API;</li>
+<li>add booking workflow;</li>
+<li>add user profile page;</li>
+<li>add favorites or saved tours;</li>
+<li>improve search and filtering options.</li>
+</ul>
+<hr>
+<h2 id="-audit-checklist">✅ Audit Checklist</h2>
+<ul>
+<li><code>x</code> Public repository</li>
+<li><code>x</code> <code>.gitignore</code> added</li>
+<li><code>x</code> <code>README.md</code> added</li>
+<li><code>x</code> <code>LICENSE</code> added</li>
+<li><code>x</code> No sensitive information included</li>
+</ul>
+<hr>
+<h2 id="-code-documentation-standards">📝 Code Documentation Standards</h2>
+<p>All new public classes, methods, and functions in this project should be documented using Dart documentation comments with the <code>///</code> format.</p>
+<h3 id="rules">Rules</h3>
+<ul>
+<li>document every public API element;</li>
+<li>start each documentation block with a short summary sentence;</li>
+<li>describe the purpose of the class, method, or function clearly;</li>
+<li>explain important parameters, return values, and side effects when needed;</li>
+<li>keep documentation updated whenever the related code is changed.</li>
+</ul>
+<h3 id="example">Example</h3>
+<pre class="language-dart"><code class="language-dart">/// Filters tours by title, country, or city.
+///
+/// Returns only tours that match the entered search query.
+</code></pre>
+<hr>
+<h2 id="-license">📄 License</h2>
+<p>This project is intended for academic / educational use.</p>
+<h2 id="-">Документування коду</h2>
+<p>У проєкті використовується документування коду за допомогою <code>///</code> Dart doc comments.</p>
+<h3 id="--2">Основні правила</h3>
+<ul>
+<li>документувати публічні класи, методи та важливі частини логіки;</li>
+<li>підтримувати документацію актуальною після змін у коді;</li>
+<li>використовувати короткі та зрозумілі описи призначення класів і методів.</li>
+</ul>
+<h3 id="--3">Генерація документації</h3>
+<p>Для генерації документації використовується команда:</p>
+<pre class="language-bash"><code class="language-bash">dart doc
+</code></pre>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="app">
+  <span class="name"><a href="app/">app</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="auth_service">
+  <span class="name"><a href="auth_service/">auth_service</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="home_page">
+  <span class="name"><a href="home_page/">home_page</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="login_page">
+  <span class="name"><a href="login_page/">login_page</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="main">
+  <span class="name"><a href="main/">main</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="mock_tours">
+  <span class="name"><a href="mock_tours/">mock_tours</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="registration_page">
+  <span class="name"><a href="registration_page/">registration_page</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="routes">
+  <span class="name"><a href="routes/">routes</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="splash_page">
+  <span class="name"><a href="splash_page/">splash_page</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="tour">
+  <span class="name"><a href="tour/">tour</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="tour_details_page">
+  <span class="name"><a href="tour_details_page/">tour_details_page</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">diploma_work_travel_app package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">diploma_work_travel_app</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="app/">app</a></li>
+      <li><a href="auth_service/">auth_service</a></li>
+      <li><a href="home_page/">home_page</a></li>
+      <li><a href="login_page/">login_page</a></li>
+      <li><a href="main/">main</a></li>
+      <li><a href="mock_tours/">mock_tours</a></li>
+      <li><a href="registration_page/">registration_page</a></li>
+      <li><a href="routes/">routes</a></li>
+      <li><a href="splash_page/">splash_page</a></li>
+      <li><a href="tour/">tour</a></li>
+      <li><a href="tour_details_page/">tour_details_page</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    diploma_work_travel_app
+      1.0.0+1
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

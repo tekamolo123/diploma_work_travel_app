@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'tour.dart';
 
+/// Сторінка з детальною інформацією про обраний тур.
 class TourDetailsPage extends StatelessWidget {
+  /// Дані туру, які потрібно відобразити.
   final Tour tour;
 
+  /// Створює сторінку деталей туру.
   const TourDetailsPage({super.key, required this.tour});
 
   @override

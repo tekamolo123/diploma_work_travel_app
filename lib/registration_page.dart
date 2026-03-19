@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'auth_service.dart';
 
+/// Сторінка реєстрації нового користувача.
 class RegisterPage extends StatefulWidget {
+  /// Створює сторінку реєстрації.
   const RegisterPage({super.key});
 
   @override
@@ -23,6 +25,10 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
+  /// Реєструє нового користувача після перевірки введених даних.
+  ///
+  /// У разі успішної реєстрації показує повідомлення і повертає
+  /// користувача на сторінку входу.
   Future<void> _register() async {
     if (!_formKey.currentState!.validate()) return;
 
